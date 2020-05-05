@@ -9,60 +9,50 @@ public class Rocket : MonoBehaviour
 
     AudioSource audioData;
 
-    // Start is called before the first frame update
+    // Use this for initialization
     void Start()
     {
-        rigidBody = GetComponent<Rigidbody>(); //access the rigidBody of the rocket
+        rigidBody = GetComponent<Rigidbody>(); //Access the rigidBody of the rocket
         audioData = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        ProcessInput();
+        Thrust();
+        Rotate();
     }
 
-
-    private void ProcessInput()
+    private void Thrust()
     {
-
-
-        if (Input.GetKey(KeyCode.Space))  //can thrust while rotating
+        if (Input.GetKey(KeyCode.Space)) // can thrust while rotating
         {
-            //add force to the rigidbody relative to its coordinate system
-            //will add force that is always in the direction that the ship is facing
-            // the function want a vector3
-            //3 floating point position numbers bundeled together
-            //si masse trop lourde ca décollera pas si pas assez de force
             rigidBody.AddRelativeForce(Vector3.up);
-            
-        }
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            if (!audioData.isPlaying)
+            if (!audioData.isPlaying) // so it doesn't layer
             {
                 audioData.Play();
             }
         }
-
-        if (Input.GetKeyUp(KeyCode.Space))
+        else
         {
-            if (audioData.isPlaying)
-            {
-                audioData.Stop();
-            }
+            audioData.Stop();
         }
+    }
 
-        if (Input.GetKey(KeyCode.Q))
+    private void Rotate()
+    {
+        rigidBody.freezeRotation = true; // take manual control of rotation
+
+        if (Input.GetKey(KeyCode.A))
         {
-            //transform component is on every game object so unity give us direct acces to it
-            transform.Rotate(Vector3.forward); //forward = z axis
+            transform.Rotate(Vector3.forward);
         }
         else if (Input.GetKey(KeyCode.D))
         {
             transform.Rotate(-Vector3.forward);
         }
 
+        rigidBody.freezeRotation = false; // resume physics control of rotation
     }
 }
