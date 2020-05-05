@@ -29,16 +29,18 @@ public class Rocket : MonoBehaviour
             //will add force that is always in the direction that the ship is facing
             // the function want a vector3
             //3 floating point position numbers bundeled together
+            //si masse trop lourde ca décollera pas si pas assez de force
             rigidBody.AddRelativeForce(Vector3.up);
         }
     
         if (Input.GetKey(KeyCode.Q))
         {
-            print("Rotating left");
+            //transform component is on every game object so unity give us direct acces to it
+            transform.Rotate(Vector3.forward); //forward = z axis
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            print("Rotating right");
+            transform.Rotate(-Vector3.forward);
         }
     }
 }
