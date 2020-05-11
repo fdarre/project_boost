@@ -1878,11 +1878,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1836527073134834714, guid: 35e80c70563b046daa0d1d9255c4779c,
-        type: 3}
-      propertyPath: m_Drag
-      value: 0.55
-      objectReference: {fileID: 0}
     - target: {fileID: 1836527073134834715, guid: 35e80c70563b046daa0d1d9255c4779c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1940,14 +1935,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1836527073134834717, guid: 35e80c70563b046daa0d1d9255c4779c,
         type: 3}
-      propertyPath: rcsThrust
-      value: 250
-      objectReference: {fileID: 0}
+      propertyPath: success
+      value: 
+      objectReference: {fileID: 8300000, guid: ea2eefa26e794494a96a913cd91161e3, type: 3}
     - target: {fileID: 1836527073134834717, guid: 35e80c70563b046daa0d1d9255c4779c,
         type: 3}
-      propertyPath: mainThrust
-      value: 8
-      objectReference: {fileID: 0}
+      propertyPath: mainEngine
+      value: 
+      objectReference: {fileID: 8300000, guid: c2535f1895ff742a08eed555791bcf6e, type: 3}
     - target: {fileID: 1836527073134834719, guid: 35e80c70563b046daa0d1d9255c4779c,
         type: 3}
       propertyPath: m_Name
