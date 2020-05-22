@@ -260,7 +260,8 @@ MonoBehaviour:
   mainEngine: {fileID: 8300000, guid: c2535f1895ff742a08eed555791bcf6e, type: 3}
   death: {fileID: 8300000, guid: ad7ebda6bba9e47c6a11a2792669209c, type: 3}
   success: {fileID: 8300000, guid: ea2eefa26e794494a96a913cd91161e3, type: 3}
-  mainEngineParticles: {fileID: 2000561584459211572}
+  mainEngineParticles: {fileID: 198100719057022332, guid: a3553fd250eb92d4091bebde350c6739,
+    type: 3}
   deathParticles: {fileID: 1998627976937356818}
   successParticles: {fileID: 1998765089661243044}
 --- !u!82 &1836527073134834716
@@ -744,15 +745,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4940884351362868, guid: a3553fd250eb92d4091bebde350c6739, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.08
+      value: 0.092
       objectReference: {fileID: 0}
     - target: {fileID: 4940884351362868, guid: a3553fd250eb92d4091bebde350c6739, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.09
+      value: -2.569
       objectReference: {fileID: 0}
     - target: {fileID: 4940884351362868, guid: a3553fd250eb92d4091bebde350c6739, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.471
       objectReference: {fileID: 0}
     - target: {fileID: 4940884351362868, guid: a3553fd250eb92d4091bebde350c6739, type: 3}
       propertyPath: m_LocalRotation.x
@@ -791,12 +792,6 @@ PrefabInstance:
 --- !u!4 &1832166879225768316 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4940884351362868, guid: a3553fd250eb92d4091bebde350c6739,
-    type: 3}
-  m_PrefabInstance: {fileID: 1836527073257016904}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &2000561584459211572 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 198100719057022332, guid: a3553fd250eb92d4091bebde350c6739,
     type: 3}
   m_PrefabInstance: {fileID: 1836527073257016904}
   m_PrefabAsset: {fileID: 0}
