@@ -22,6 +22,8 @@ public class Rocket : MonoBehaviour
     enum State { Alive, Dying, Transcending };
     State state = State.Alive;
 
+    bool collisionsDisabled = false;
+
     // Use this for initialization
     void Start()
     {
@@ -37,12 +39,18 @@ public class Rocket : MonoBehaviour
             RespondToThrustInput();
             RespondToRotateInput();
         }
+        //only if Development Build is on in Builds settings
+        if (Debug.isDebugBuild)
+        {
+            RespondToDebugKeys();
+        }
+        
     }
 
     void OnCollisionEnter(Collision collision)
     {
 
-        if (state != State.Alive)
+        if (state != State.Alive || collisionsDisabled)
         {
             return; //stop executing the method - ignore collisions
         }
@@ -87,6 +95,20 @@ public class Rocket : MonoBehaviour
     private void LoadNextLevel()
     {
         SceneManager.LoadScene(1);
+    }
+
+    private void RespondToDebugKeys()
+    {
+
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            LoadNextLevel();
+        }
+
+        else if(Input.GetKeyDown(KeyCode.C))
+        {
+            collisionsAreDisabled = !collisionsAreDisabled;
+        }
     }
 
     private void RespondToThrustInput()
